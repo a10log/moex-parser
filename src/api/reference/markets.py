@@ -13,9 +13,9 @@ class MarketsApi(BaseApi):
 
 	def __init__(
 		self, 
-		data_path: str = DataPath.MARKETS_DATA_PATH,
+		filepath: str = DataPath.MARKETS_DATA_PATH,
 	):
-		super().__init__(data_path)
+		super().__init__(filepath)
 
 	def _get_data_single(self, engine: str):
 		url = BASE_URL.format(engine)
@@ -34,7 +34,7 @@ class MarketsApi(BaseApi):
 
 			dataframes.append(data_df_single)
 		self.data_df = pd.concat(dataframes, ignore_index=True)
-		self.save_data()
+		self.save_data(self.filepath)
 		return self.data_df
 	
 __all__ = [

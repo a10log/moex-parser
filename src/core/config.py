@@ -5,6 +5,7 @@ from dataclasses import dataclass
 class Config:
 
 	METADATA_PATH: str = "data/metadata"
+	HISTORY_DATA_DIR_PATH: str = "data/history"
 	DATA_PATH: str = "data"
 	
 
