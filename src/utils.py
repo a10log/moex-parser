@@ -7,3 +7,4 @@ def parse_xml(xml_data: bytes):
 		{k: v for k, v in row.items()}
 		for row in rows
 	]
+
