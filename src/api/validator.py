@@ -1,6 +1,5 @@
 from typing import Dict, List, Tuple, Set
 
-
 class MarketValidator:
     """Класс для работы с допустимыми комбинациями engine-market"""
     

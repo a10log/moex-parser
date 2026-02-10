@@ -5,8 +5,8 @@ from tqdm import tqdm
 from typing import Union
 
 from src.api.base import BaseApi
-from src.core.config import Config
-from src.utils import parse_xml
+from src.config import Config
+from src.api.utils import parse_xml
 
 from src.api.validator import MarketValidator
 
@@ -44,6 +44,7 @@ class HistoryApi(BaseApi):
 		end_date: Union[str, datetime.datetime, datetime.date],
 		market_name: str,
 		engine_name: str = "stock",
+		dates_to_skip: list[str] = None
 	):
 		start_date = self.validate_date(start_date)
 		end_date = self.validate_date(end_date)
@@ -62,6 +63,8 @@ class HistoryApi(BaseApi):
 		
 		dataframes = []
 		for date in tqdm(all_dates, total=days_diff):
+			if dates_to_skip is not None and str(date) in dates_to_skip:
+				continue
 			
 			data_df_single = self._get_data_single_day(
 				market_name=market_name,

@@ -3,7 +3,7 @@ import datetime
 
 from src.api.reference.engines import EnginesApi
 from src.api.reference.markets import MarketsApi
-from src.api.history.history import HistoryApi
+from api.history import HistoryApi
 
 logging.basicConfig(
 	level=logging.INFO,

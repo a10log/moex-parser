@@ -1,9 +1,9 @@
 import requests
 import pandas as pd
 
-from src.utils import parse_xml
+from src.api.utils import parse_xml
 from src.api.base import BaseApi
-from src.core.config import DataPath
+from src.config import DataPath
 
 
 BASE_URL = "https://iss.moex.com/iss/engines/{}/markets.xml"
