@@ -1,14 +1,13 @@
-from .base import BaseApi
+from .base import BaseApi, BaseDynamicsApi
 from .history import HistoryApi
-from .reference import EnginesApi
-from .reference import MarketsApi
-from .validator import MarketValidator
+from .engines import EnginesApi
+from .markets import MarketsApi
 
 
-# __all__ = [
-#     'BaseApi',
-#     'HistoryApi', 
-#     'EnginesApi',
-#     'MarketsApi',
-#     'MarketValidator'
-# ]
+__all__ = [
+    'BaseApi',
+	"BaseDynamicsApi",
+    'HistoryApi', 
+    'EnginesApi',
+    'MarketsApi',
+]
